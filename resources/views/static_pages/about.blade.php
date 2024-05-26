@@ -1,5 +1,5 @@
 @extends('layout.default')
-@section('title','about')
+@section('title','contact')
 @section('content')
     <h1>about</h1>
 @stop
