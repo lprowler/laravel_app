@@ -24,9 +24,9 @@
                                value="{{old('password')}}">
                     </div>
                     <div class="form-group">
-                        <label for="password_confirm">confirm password:</label>
-                        <input type="password" name="password_confirm" id="password_confirm" class="form-control"
-                               value="{{old('password_confirm')}}">
+                        <label for="password_confirmation">confirm password:</label>
+                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control"
+                               value="{{old('password_confirmation')}}">
                     </div>
 
                     <button type="submit" class="btn btn-primary">register</button>
@@ -35,5 +35,4 @@
         </div>
     </div>
 @stop
-
 
