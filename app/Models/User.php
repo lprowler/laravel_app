@@ -32,6 +32,11 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    public function gravatar($size = '100')
+    {
+        $hash = md5(strtolower(trim($this->attributes['email'])));
+        return "https://gravatar.w3tt.com/avatar/$hash?s=$size";
+    }
 
     /**
      * The attributes that should be cast.
