@@ -1,4 +1,4 @@
-@extends('layout.default')
+@extends('layouts.default')
 @section('title','user register')
 @section('content')
     <div class="offset-md-2 col-md-8">
@@ -7,6 +7,7 @@
                 <h5>register</h5>
             </div>
             <div class="card-body">
+                @include('shared._errors')
                 <form method="post" action="{{route('users.store')}}">
                     {{ csrf_field() }}
                     <div class="form-group">
@@ -19,11 +20,13 @@
                     </div>
                     <div class="form-group">
                         <label for="password">password:</label>
-                        <input type="password" name="password" id="password" class="form-control" value="{{old('password')}}">
+                        <input type="password" name="password" id="password" class="form-control"
+                               value="{{old('password')}}">
                     </div>
                     <div class="form-group">
                         <label for="password_confirm">confirm password:</label>
-                        <input type="password" name="password_confirm" id="password_confirm" class="form-control" value="{{old('password_confirm')}}">
+                        <input type="password" name="password_confirm" id="password_confirm" class="form-control"
+                               value="{{old('password_confirm')}}">
                     </div>
 
                     <button type="submit" class="btn btn-primary">register</button>
