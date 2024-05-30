@@ -26,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
     {
         // fix database index length
         Schema::defaultStringLength(191);
+        \Illuminate\Pagination\Paginator::useBootstrap();
     }
 }
