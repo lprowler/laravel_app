@@ -10,14 +10,22 @@
                 @include('shared._errors')
                 <form method="post" action="{{route('login')}}">
                     {{csrf_field()}}
-                    <div class="mb-3">
+                    <div class="form-group">
                         <label for="email">email:</label>
                         <input class="form-control" type="email" name="email" id="email" value="{{old('email')}}">
                     </div>
-                    <div class="mb-3">
+                    <div class="form-group">
                         <label for="password">password:</label>
-                        <input class="form-control" type="password" name="password" id="password" value="{{old('password')}}">
+                        <input class="form-control" type="password" name="password" id="password"
+                               value="{{old('password')}}">
                     </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="remember" id="remember">
+                            <label class="form-check-label" for="remember">remember me</label>
+                        </div>
+                    </div>
+
                     <button class="btn btn-primary" type="submit">login</button>
                 </form>
                 <hr>
