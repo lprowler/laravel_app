@@ -80,17 +80,17 @@ class UsersController extends Controller
         return back();
     }
 
-    public function sendEmailConfirmationTo(User $user)
+    public function sendEmailConfirmationTo($user)
     {
         $view = 'emails.confirm';
         $data = compact('user');
-        $from = 'summer@example.com';
-        $name = 'Summer';
-        $to = $user->email;
-        $subject = '感谢注册 '.env('APP_NAME').' 应用!请确认您的邮箱。';
 
-        Mail::send($view,$data,function($message) use ($from,$name,$to,$subject){
-            $message->from($from,$name)->to($to)->subject($subject);
+
+        $to = $user->email;
+        $subject = '感谢注册 '.config('APP_NAME').' 应用!请确认您的邮箱。';
+
+        Mail::send($view,$data,function($message) use ($to,$subject){
+            $message->to($to)->subject($subject);
         });
     }
     public function confirmEmail($token)
