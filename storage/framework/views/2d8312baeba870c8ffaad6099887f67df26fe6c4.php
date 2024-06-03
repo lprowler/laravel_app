@@ -7,9 +7,14 @@
             <section class="user_info">
                 <?php echo $__env->make('shared._user_info',['user'=>$user], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </section>
+
+            <?php if(\Illuminate\Support\Facades\Auth::check()): ?>
+                <?php echo $__env->make('users._follow_form', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php endif; ?>
             <section class="stat mt-2 mb-4">
                 <?php echo $__env->make('shared._stat',['user'=>$user], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </section>
+
             <section class="status">
                 <?php if($statuses->count()>0): ?>
                     <ul class="list-unstyled">

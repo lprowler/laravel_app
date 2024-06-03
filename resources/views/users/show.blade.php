@@ -7,9 +7,14 @@
             <section class="user_info">
                 @include('shared._user_info',['user'=>$user])
             </section>
+
+            @if(\Illuminate\Support\Facades\Auth::check())
+                @include('users._follow_form')
+            @endif
             <section class="stat mt-2 mb-4">
                 @include('shared._stat',['user'=>$user])
             </section>
+
             <section class="status">
                 @if($statuses->count()>0)
                     <ul class="list-unstyled">
