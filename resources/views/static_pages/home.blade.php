@@ -8,12 +8,14 @@
                     @include('shared._status_form')
                 </section>
                 <h4>data list:</h4>
-                <hr>
                 @include('shared._feed')
             </div>
             <aside class="col-md-4">
                 <section class="user_info">
                     @include('shared._user_info',['user'=>\Illuminate\Support\Facades\Auth::user()])
+                </section>
+                <section class="stat mt-2">
+                    @include('shared._stat',['user'=>\Illuminate\Support\Facades\Auth::user()])
                 </section>
             </aside>
         </div>

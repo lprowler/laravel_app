@@ -8,12 +8,14 @@
                     <?php echo $__env->make('shared._status_form', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 </section>
                 <h4>data list:</h4>
-                <hr>
                 <?php echo $__env->make('shared._feed', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
             </div>
             <aside class="col-md-4">
                 <section class="user_info">
                     <?php echo $__env->make('shared._user_info',['user'=>\Illuminate\Support\Facades\Auth::user()], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                </section>
+                <section class="stat mt-2">
+                    <?php echo $__env->make('shared._stat',['user'=>\Illuminate\Support\Facades\Auth::user()], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 </section>
             </aside>
         </div>
